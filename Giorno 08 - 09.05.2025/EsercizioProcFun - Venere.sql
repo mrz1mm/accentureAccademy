@@ -383,7 +383,7 @@ BEGIN
 	-- registrare un messaggio di log nella tabella `log`.
 	INSERT INTO log (type, description)
 		VALUES (
-			'NEW_RENTAL_OK', -- Un tipo breve per "Nuovo Noleggio OK"
+			'NEW_RENTAL_OK',
 			CONCAT(
 				'Nuovo noleggio creato con successo. RentalID: ', IFNULL(v_new_rental_id, 'N/A'),
 				', customer_id: ', IFNULL(p_customer_id, 'N/A'),
