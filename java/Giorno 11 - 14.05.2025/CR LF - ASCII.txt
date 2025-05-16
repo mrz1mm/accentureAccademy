@@ -1,0 +1,19 @@
+
+/*
+  line feed  (lasciare una riga, ovvero vado sulla riga successiva e rimango nello stesso punto orizzontalmente)
+
+  Codice asci 10,  detta anche LF   o   \n        la "n" sta per "new line"
+
+
+--  carriage return (ritorno il carrello a inizio riga)
+
+   Codice asci 13,  detta anche CR   o   \r       la "r" sta per "return"
+   
+-- CR LF,  #13#10     NEI SISTEMI WINDOWS/MS DOS         è #13#10 
+-- LF,      #10       NEI SISTEMI LINUX/UNIX     vale come #13#10           <== questa qua
+-- CR       #13       NEI SISTEMI MAC            vale come #13#10  
+    
+    
+ la convenzione è CR LF  13-10, prima vado a inizio riga e poi vado sulla riga successiva   
+    
+*/
