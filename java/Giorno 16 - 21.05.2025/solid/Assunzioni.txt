@@ -1,0 +1,16 @@
+1*
+Abbiamo scelto di far restituire una stringa ai metodi mostraInfo() e disegna() anziché farli stampare direttamente a console. 
+Questa decisione è guidata dal SRP.
+La responsabilità primaria delle classi geometriche è quella di modellare la forma, calcolare 
+le sue proprietà e fornire una rappresentazione testuale e grafica di sé stessa. 
+La responsabilità di come e dove queste informazioni vengono presentate dovrebbe essere separata e gestita da un altro componente.
+Facendo restituire una stringa, le classi geometriche forniscono i dati formattati, ma delegano l'effettiva stampa ad un 
+componente esterno (TestEsercizioAvanzato).
+
+
+2*
+Figura implementa Disegnable --> tutte le sottoclassi la ereditano.
+Questo soddisfa l'esercizio.
+Consci che l'ISP suggerirebbe che solo le classi che necessitano di essere disegnabili dovrebbero implementare l'interfaccia, ma nel caso specifico delle figure geometriche,
+risultano tutte disegnabile (una figura geometrica per chiamarsi tale deve esserlo).
+
