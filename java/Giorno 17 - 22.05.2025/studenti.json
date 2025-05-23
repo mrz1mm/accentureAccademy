@@ -1,0 +1,25 @@
+{
+  [	
+	{
+	   "nomeScuola": "ITI Vittorio Emanuele III",
+	   "cognome": "Errante",
+	   "nome": "Vincenzo",
+	   "eta": ",
+	   "attivo": true
+	},
+	{
+	   "nomeScuola": "ITI Vittorio Emanuele III",
+	   "cognome": "Massimo",
+	   "nome": "Rossi",
+	   "eta": 2,
+	   "attivo": false
+	},
+	{
+	   "nomeScuola": "ITI Vittorio Emanuele III",
+	   "cognome": "Alberto",
+	   "nome": "Bindi",
+	   "eta": 22,
+	   "attivo": false
+	}
+  ]
+}
