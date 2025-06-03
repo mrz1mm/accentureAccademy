@@ -6,16 +6,16 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class appNotes {
-    // non c'è bisogno di chiudere BufferedReader e BufferedWriter in quanto il try già gestisce automaticamente la chiusura delle risorse.
+    // non c'è bisogno di chiudere BufferedReader, BufferedWriter, e Scanner in quanto il try già gestisce automaticamente la chiusura delle risorse.
 
     private static final String NOME_FILE = "notes.txt";
 
     // 1. Aggiungere una nota
-    // Considerazioni:
-    // 1.1. la nota potrebbe essere vuota
-    // 1.2. la nota potrebbe essere già presente
-    // 1.3. la nota potrebbe essere già presente ma vuota
-    // 1.4. la nota potrebbe essere già presente con testo
+    // Assunzioni:
+    // 1.1. la nota potrebbe essere vuota --> non salva la nota
+    // 1.2. la nota potrebbe essere già presente --> non salva la nota
+    // 1.3. la nota potrebbe essere già presente ma vuota --> caso che non sussiste
+    // 1.4. la nota potrebbe essere già presente con testo --> caso che non sussiste
     private static void aggiungiNota(Scanner input) {
         System.out.println("Aggiungi una nota:");
         String nota = input.nextLine();
@@ -55,9 +55,9 @@ public class appNotes {
 
     // 2. Leggere le note
     // Considerazioni:
-    // 2.1. potrebbero non esserci note
-    // 2.2. potrebbero esserci note ma vuote
-    // 2.3. potrebbero esserci note con testo
+    // 2.1. potrebbero non esserci note --> non stampa nulla
+    // 2.2. potrebbero esserci note ma vuote --> stampa "La nota esiste ma è vuota"
+    // 2.3. potrebbero esserci note con testo --> stampa le note
     private static void leggiTutteLeNote() {
         System.out.println("Leggo tutte le note...");
         File file = new File(NOME_FILE);
@@ -89,12 +89,11 @@ public class appNotes {
     }
 
 
-
     public static void main(String[] args) {
         boolean itsover = true;
-        Scanner input = new Scanner(System.in);
 
-    while (itsover) {
+        try (Scanner input = new Scanner(System.in)) {
+            while (itsover) {
             System.out.println("\nMenu");
             System.out.println("1. Aggiungi una nuova nota");
             System.out.println("2. Leggi tutte le note");
@@ -115,9 +114,12 @@ public class appNotes {
                     System.out.println("Scelta non valida. Riprova.");
             }
         }
-
-        input.close();
+        } catch (Exception e) {
+            System.err.println("Errore durante l'inizializzazione dello scanner: " + e.getMessage());
+        }
+        finally {
+            System.out.println("Applicazione terminata.");
+        } 
     }
-
 
 }
